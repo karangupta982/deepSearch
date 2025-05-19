@@ -1,0 +1,169 @@
+.flowContainer {
+  width: 100%;
+  height: 700px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f8fafc;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+}
+
+.questionNode {
+  padding: 12px 16px;
+  border-radius: 10px;
+  background-color: #eff6ff;
+  border: 2px solid #3b82f6;
+  width: 220px;
+  font-weight: 500;
+  color: #1e3a8a;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1), 0 2px 4px -1px rgba(59, 130, 246, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: move;
+}
+
+.questionNode:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1), 0 4px 6px -2px rgba(59, 130, 246, 0.05);
+}
+
+.answerNode {
+  padding: 12px 16px;
+  border-radius: 10px;
+  background-color: #f0fdf4;
+  border: 2px solid #10b981;
+  width: 220px;
+  color: #065f46;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1), 0 2px 4px -1px rgba(16, 185, 129, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: move;
+}
+
+.answerNode:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.1), 0 4px 6px -2px rgba(16, 185, 129, 0.05);
+}
+
+.nodeContent {
+  word-wrap: break-word;
+  overflow-y: hidden;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  transition: max-height 0.3s ease-out;
+}
+
+.nodeContent.collapsed {
+  max-height: 80px;
+}
+
+.nodeContent:not(.collapsed) {
+  max-height: none;
+}
+
+.viewMoreButton {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 0.75rem;
+  padding: 2px 0;
+  cursor: pointer;
+  text-decoration: underline;
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-top: 2px;
+}
+
+.viewMoreButton:hover {
+  color: #2563eb;
+}
+
+.edgePath {
+  stroke-width: 2 !important;
+}
+
+.edgePath:hover {
+  stroke: #ef4444 !important;
+}
+
+.edgeButtonForeignObject {
+  cursor: pointer;
+  background-color: transparent;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.edgeButton {
+  width: 28px;
+  height: 28px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ef4444;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.edgeButton:hover {
+  transform: scale(1.1);
+  background-color: #fef2f2;
+  border-color: #fca5a5;
+}
+
+.nodeControls {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  display: flex;
+  gap: 5px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.questionNode:hover .nodeControls,
+.answerNode:hover .nodeControls {
+  opacity: 1;
+}
+
+.controlButton {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controlButton:hover {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+/* Ensure proper node spacing and visibility */
+.react-flow__node {
+  z-index: 5;
+}
+
+.react-flow__edge {
+  z-index: 1;
+}
+
+/* Improve handle visibility */
+.react-flow__handle {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border: 2px solid #3b82f6;
+  z-index: 6;
+}
