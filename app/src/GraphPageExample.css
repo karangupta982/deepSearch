@@ -1,4 +1,0 @@
-/* disable pruning in example mode */
-.graph-page-example .contains-path-and-arrow {
-    pointer-events: none;
-}
